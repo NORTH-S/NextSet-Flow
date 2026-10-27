@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173e33">
+  <meta name="description" content="Explore NextSet Flow's small local workout intent classifier.">
+  <title>NextSet Flow — Intent model lab</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#request">Skip to the classifier</a>
+  <div class="page-wrap">
+    <header class="header">
+      <a class="brand" href="./index.html" aria-label="NextSet Flow intent model lab">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6h7a4 4 0 0 1 4 4v4a4 4 0 0 0 4 4h3M3 18h3a4 4 0 0 0 4-4v-4a4 4 0 0 1 4-4h7m-3-3 3 3-3 3m0 6 3 3-3 3"/></svg></span>
+        <span>nextset<span class="brand-light">flow</span><small>MODEL LAB</small></span>
+      </a>
+      <span class="local-badge"><i></i>Local inference</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">A SMALL MODEL. ONE CLEAR TASK.</p>
+          <h1 id="page-title">Understand the request.<br><span>Find the training focus.</span></h1>
+          <p class="intro-copy">Write a workout request in English or Chinese. The trained classifier predicts an intent, with a follow-up when the result is uncertain.</p>
+        </div>
+        <div class="intro-note"><span class="orbit" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="m17 24 5 5 10-11"/><circle cx="38" cy="16" r="4"/></svg></span><strong>Runs in this browser.</strong><span>No model API key required.</span></div>
+      </section>
+
+      <div class="workspace">
+        <section class="request-card" aria-labelledby="request-title">
+          <div class="card-heading"><span class="step-label">01 / YOUR REQUEST</span><span id="model-status" class="model-status" role="status"><i></i>Loading model…</span></div>
+          <h2 id="request-title">What’s your focus today?</h2>
+          <form id="classify-form">
+            <label class="sr-only" for="request">Workout request, English or Chinese</label>
+            <textarea id="request" name="request" rows="6" maxlength="1200" placeholder="I have 30 minutes and want to train legs. I prefer machines and would like to avoid queues." spellcheck="false"></textarea>
+            <div class="input-meta"><span>English / 中文</span><span id="character-count">0 / 1,200</span></div>
+            <button class="primary-button" id="classify-button" type="submit" disabled><span>Classify my request</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+          </form>
+          <p class="try-label">Or try a starting point</p>
+          <div class="sample-buttons" aria-label="Example requests"><button type="button" data-example="legs">Leg session</button><button type="button" data-example="chinese">中文示例</button><button type="button" data-example="unclear">Unclear request</button></div>
+          <p id="input-message" class="input-message" role="status"></p>
+          <div class="task-note"><span aria-hidden="true">↗</span><p>The output is a training-focus label. Workout timing, equipment availability and scheduling are separate steps.</p></div>
+        </section>
+
+        <section class="result-card" aria-labelledby="result-title" aria-live="polite" aria-atomic="false">
+          <div class="card-heading"><span class="step-label">02 / MODEL OUTPUT</span><span class="learned-badge">Trained classifier</span></div>
+          <div id="empty-result" class="empty-result">
+            <span class="result-visual" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="44"/><circle cx="60" cy="60" r="30"/><path d="M31 60h20l12-18 13 36 12-18h7"/><circle cx="91" cy="29" r="6"/></svg></span>
+            <h2 id="result-title">Ready when you are.</h2>
+            <p>A short request becomes a clear intent label.<br>Try different wording, corrections and mixed languages.</p>
+            <div class="intent-chips" aria-label="Supported intent categories"><span>Legs</span><span>Upper body</span><span>Full body</span><span>Push</span><span>Pull</span><span>Clarify</span><span>Unsupported</span></div>
+          </div>
+          <div id="result-content" class="result-content" hidden>
+            <div class="prediction-top"><span id="decision-status" class="decision-status">Prediction</span><span id="inference-time" class="inference-time"></span></div>
+            <h2 id="prediction-label"></h2>
+            <p id="prediction-detail" class="prediction-detail"></p>
+            <blockquote id="classified-request" class="classified-request"></blockquote>
+            <div class="scores-heading"><h3>Top model scores</h3><span>Uncalibrated</span></div>
+            <ol id="candidate-list" class="candidate-list"></ol>
+            <p id="raw-top-label" class="raw-top-label"></p>
+            <p class="score-note">Scores show the model’s relative confidence. A high score does not establish accuracy on new requests.</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="method-strip" aria-label="How this prototype works"><article><span>01</span><div><strong>Your words</strong><p>A natural-language workout request.</p></div></article><span class="method-arrow" aria-hidden="true">→</span><article><span>02</span><div><strong>Learned patterns</strong><p>Local model weights classify the text.</p></div></article><span class="method-arrow" aria-hidden="true">→</span><article><span>03</span><div><strong>A focus or a follow-up</strong><p>One of seven supported labels.</p></div></article></section>
+      <p class="research-note">Prototype trained on assistant-authored synthetic examples. Consult the separate evaluation report for held-out results and limitations.</p>
+    </main>
+    <footer><span>NextSet Flow <i>·</i> Standalone intent classifier</span><span>Model files stay local to this project.</span></footer>
+  </div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# Private credentials and local configuration
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.openai/
+
+# Installed dependencies and generated QA/build output
+node_modules/
+.training-deps/
+__pycache__/
+*.pyc
+qa/
+**/dist/server/
+**/dist/.openai/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+~$*
+*.log
+*.zip
+*.tar.gz

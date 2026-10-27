@@ -1,0 +1,88 @@
+{
+  "modelSHA256": "2cc05f9ab7a3a71c398facfcc2ff473fb98052d1daef2e5c0d1e497d2e536df9",
+  "seedSHA256": "4ede3360086bd5064d4322248cc45534aade6fddea457838e47168f619366a52",
+  "validationSHA256": "af98727e516984fc0caa41aebfe2fab53611a67d09a71004ea521349cea85d5b",
+  "candidateGrid": [
+    {
+      "C": 1.0,
+      "wordWeight": 0.0,
+      "accuracy": 0.7448979591836735,
+      "macroF1": 0.7409227745434642,
+      "iterations": [
+        26
+      ]
+    },
+    {
+      "C": 4.0,
+      "wordWeight": 0.0,
+      "accuracy": 0.7551020408163265,
+      "macroF1": 0.7556591026409113,
+      "iterations": [
+        34
+      ]
+    },
+    {
+      "C": 12.0,
+      "wordWeight": 0.0,
+      "accuracy": 0.7551020408163265,
+      "macroF1": 0.7556591026409113,
+      "iterations": [
+        50
+      ]
+    },
+    {
+      "C": 1.0,
+      "wordWeight": 0.75,
+      "accuracy": 0.7142857142857143,
+      "macroF1": 0.716097166836083,
+      "iterations": [
+        21
+      ]
+    },
+    {
+      "C": 4.0,
+      "wordWeight": 0.75,
+      "accuracy": 0.7448979591836735,
+      "macroF1": 0.7461047254150702,
+      "iterations": [
+        44
+      ]
+    },
+    {
+      "C": 12.0,
+      "wordWeight": 0.75,
+      "accuracy": 0.7346938775510204,
+      "macroF1": 0.7373860432814826,
+      "iterations": [
+        41
+      ]
+    }
+  ],
+  "chosenPolicy": {
+    "minConfidence": 0.5,
+    "minMargin": 0.05,
+    "minKnownFraction": 0.15,
+    "accepted": 34,
+    "correct": 31,
+    "precision": 0.9117647058823529
+  },
+  "blindTestUntouched": true,
+  "trainClassCounts": {
+    "legs": 150,
+    "upper": 150,
+    "full": 150,
+    "push": 150,
+    "pull": 150,
+    "clarify": 150,
+    "unsupported": 150
+  },
+  "validationClassCounts": {
+    "legs": 14,
+    "upper": 14,
+    "full": 14,
+    "push": 14,
+    "pull": 14,
+    "clarify": 14,
+    "unsupported": 14
+  }
+}

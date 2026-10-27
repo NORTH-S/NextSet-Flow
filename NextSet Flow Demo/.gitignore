@@ -1,0 +1,13 @@
+node_modules/
+.DS_Store
+*.tar.gz
+*.zip
+qa/
+.openai/local/
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+!.env.example
+dist/server/
+dist/.openai/

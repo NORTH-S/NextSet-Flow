@@ -1,0 +1,7 @@
+{
+  "sameLearnedWeightsAndPolicy": true,
+  "originalSHA256": "2cc05f9ab7a3a71c398facfcc2ff473fb98052d1daef2e5c0d1e497d2e536df9",
+  "reproducedSHA256": "8e87f0f81932a15199ff2f3158501e7aa6cb25274d2703e90a2a5fc7007a5eaa",
+  "excludedMetadata": "timestamps and elapsed time; identical weights/feature ordering/IDF/abstention",
+  "testUsedForReproduction": false
+}

@@ -1,0 +1,5 @@
+.training-deps/
+__pycache__/
+*.pyc
+.env*
+qa/

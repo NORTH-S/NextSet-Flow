@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "modelSHA256": "2cc05f9ab7a3a71c398facfcc2ff473fb98052d1daef2e5c0d1e497d2e536df9",
+  "runtimeSHA256": "162165c9785475fc1fbd0395223e25b7e627bffafd54d5d838fe6230259ce12a",
+  "modelBytes": 1424885,
+  "modelFormat": "nextset-tfidf-logreg-v1",
+  "labels": [
+    "clarify",
+    "full",
+    "legs",
+    "pull",
+    "push",
+    "unsupported",
+    "upper"
+  ],
+  "task": "Workout-focus classification only",
+  "seedRows": 350,
+  "trainingRowsAfterAugmentation": 1050,
+  "evaluation": {
+    "rows": 105,
+    "rawAccuracy": 0.7238095238095238,
+    "macroF1": 0.7220613358544392,
+    "dataType": "Independently assistant-authored synthetic requests; not real users"
+  },
+  "abstention": {
+    "minConfidence": 0.5,
+    "minMargin": 0.05,
+    "minKnownFraction": 0.15
+  },
+  "source": "../NextSet Flow Intent Model"
+}
